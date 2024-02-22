@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_suggestion_pickup_districts" author="fas">
+        <createTable tableName="tb_suggestion_pickup_districts">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suggestion_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_pickup_districts_suggestions" referencedTableName="tb_suggestions" referencedColumnNames="autoid"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_suggestion_pickups" author="fas">
+        <createTable tableName="tb_suggestion_pickups">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suggestion_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_pickups_suggestions" referencedTableName="tb_suggestions" referencedColumnNames="autoid"/>
+            </column>
+            <column name="suggestion_pickup_district_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_pickups_suggestion_pickup_districts" referencedTableName="tb_suggestion_pickup_districts" referencedColumnNames="autoid"/>
+            </column>
+            <column name="suggestion_trash_type_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestion_pickups_suggestion_trash_types" referencedTableName="tb_suggestion_trash_types" referencedColumnNames="autoid"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

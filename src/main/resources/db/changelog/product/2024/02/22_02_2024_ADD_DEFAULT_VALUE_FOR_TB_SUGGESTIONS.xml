@@ -4,8 +4,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="/db/changelog/product/2024/02/22_02_2024_MAKE_OUTSIDE_REFS_TO_SYSTEM_IDS.xml"/>
-    <include file="/db/changelog/product/2024/02/22_02_2024_ADD_DEFAULT_VALUE_FOR_TB_SUGGESTIONS.xml"/>
-    <include file="/db/changelog/product/2024/02/22_02_2024_ADD_UNIQUE_KEY_PAIR_TB_SUGGESTIONS.xml"/>
-
+    <changeSet id="add default value for is_approved_flag" author="fas">
+        <addDefaultValue tableName="tb_suggestions" columnName="is_approved_flag" defaultValue="false"/>
+    </changeSet>
+    
 </databaseChangeLog>

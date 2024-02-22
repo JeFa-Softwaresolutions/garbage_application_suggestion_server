@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_suggestions" author="fas">
+        <createTable tableName="tb_suggestions">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="city_name" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="link_to_informations" type="VARCHAR(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="need_streets_for_calc_flag" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_approved_flag" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestions_states" referencedTableName="tb_states" referencedColumnNames="autoid"/>
+            </column>
+            <column name="district_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestions_districts" referencedTableName="tb_districts" referencedColumnNames="autoid"/>
+            </column>
+            <column name="user_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestions_users" referencedTableName="tb_suggestion_users" referencedColumnNames="autoid"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

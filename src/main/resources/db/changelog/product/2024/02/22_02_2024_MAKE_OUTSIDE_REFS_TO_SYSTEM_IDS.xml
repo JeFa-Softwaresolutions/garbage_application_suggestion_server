@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="remove ref fields" author="fas">
+        <dropColumn tableName="tb_suggestions" columnName="state_ref"/>
+        <dropColumn tableName="tb_suggestions" columnName="district_ref"/>
+        <dropColumn tableName="tb_suggestions" columnName="user_ref"/>
+    </changeSet>
+
+    <changeSet id="add system id fields" author="fas">
+        <addColumn tableName="tb_suggestions">
+            <column name="state_system_id" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="tb_suggestions">
+            <column name="district_system_id" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addColumn tableName="tb_suggestions">
+            <column name="created_by" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    
+</databaseChangeLog>

@@ -4,4 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
+    <include file="/db/changelog/baseData/tb_suggestions.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_pickup_districts.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_trash_types.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_towns.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_streets.xml"/>
+    <include file="/db/changelog/baseData/tb_suggestion_pickups.xml"/>
+
 </databaseChangeLog>
