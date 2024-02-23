@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add approved_by_ref field to tb_suggestions" author="fas">
+        <addColumn tableName="tb_suggestions">
+            <column name="approved_by_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_suggestions_suggestion_users" referencedTableName="tb_suggestion_users" referencedColumnNames="autoid"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    
+</databaseChangeLog>

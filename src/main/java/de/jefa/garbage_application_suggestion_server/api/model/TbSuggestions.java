@@ -43,6 +43,10 @@ public class TbSuggestions {
     @JsonIgnore
     private String createdBy;
 
+    @Basic
+    @Column(name = "approved_by_ref")
+    private Long approvedByRef;
+
     public long getAutoid() {
         return autoid;
     }
@@ -105,6 +109,14 @@ public class TbSuggestions {
 
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
+    }
+
+    public Long getApprovedByRef() {
+        return approvedByRef;
+    }
+
+    public void setApprovedByRef(Long approvedByRef) {
+        this.approvedByRef = approvedByRef;
     }
 
     @Override

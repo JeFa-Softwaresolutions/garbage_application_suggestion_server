@@ -7,5 +7,6 @@
     <include file="/db/changelog/product/2024/02/22_02_2024_MAKE_OUTSIDE_REFS_TO_SYSTEM_IDS.xml"/>
     <include file="/db/changelog/product/2024/02/22_02_2024_ADD_DEFAULT_VALUE_FOR_TB_SUGGESTIONS.xml"/>
     <include file="/db/changelog/product/2024/02/22_02_2024_ADD_UNIQUE_KEY_PAIR_TB_SUGGESTIONS.xml"/>
+    <include file="/db/changelog/product/2024/02/23_02_2024_GA-12_tb_suggestions Felder hinzufügen.xml"/>
 
 </databaseChangeLog>
